@@ -33,7 +33,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-// Cookie message
+// Cookie message: create and insert
 const cookieMessage = document.createElement("div");
 cookieMessage.classList.add("cookie-message");
 cookieMessage.innerHTML = 'We use cookie to improve your experiment.'
@@ -48,6 +48,23 @@ document.querySelector(".btn--close-cookie")
 
 // Styles
 cookieMessage.style.background = '#37383d';
-cookieMessage.style.width = '120%';
+// cookieMessage.style.width = '100vw';
 cookieMessage.style.height = Number.parseFloat(getComputedStyle(cookieMessage).height)
     + 20 + 'px';
+cookieMessage.style.fontSize = '16px'
+
+
+// Scroll to
+document.querySelector(".btn--scroll-to")
+        .addEventListener('click', function() {
+          const a = document.querySelector(".section__header")
+                  .getBoundingClientRect();
+
+          // window.scrollTo(0, a.y * 0.9);
+          // window.scrollTo({top: a.y + window.pageYOffset,
+          //                   left: 0 + window.pageXOffset,
+          //                   behavior: 'smooth'});
+          
+          document.querySelector(".section__header")
+                  .scrollIntoView({ behavior: 'smooth'} );
+        });
