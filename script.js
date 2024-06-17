@@ -54,11 +54,11 @@ cookieMessage.style.height = Number.parseFloat(getComputedStyle(cookieMessage).h
 cookieMessage.style.fontSize = '16px'
 
 
-// Scroll to
+// Scrolling
 document.querySelector(".btn--scroll-to")
         .addEventListener('click', function() {
-          const a = document.querySelector(".section__header")
-                  .getBoundingClientRect();
+          // const a = document.querySelector(".section__header")
+          //         .getBoundingClientRect();
 
           // window.scrollTo(0, a.y * 0.9);
           // window.scrollTo({top: a.y + window.pageYOffset,
@@ -68,3 +68,16 @@ document.querySelector(".btn--scroll-to")
           document.querySelector(".section__header")
                   .scrollIntoView({ behavior: 'smooth'} );
         });
+
+
+// Page navigation: event delegation
+document.querySelector(".nav__links")
+    .addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // console.dir(e.target);
+      const id = e.target.getAttribute('href');
+      e.target.nodeName === 'A' && document.querySelector(id).scrollIntoView({
+        behavior: 'smooth'
+                                                                             })
+    });
