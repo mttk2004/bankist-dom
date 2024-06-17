@@ -81,3 +81,27 @@ document.querySelector(".nav__links")
         behavior: 'smooth'
                                                                              })
     });
+
+
+// Tabbed components
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+tabsContainer.addEventListener('click', function(e) {
+  const tab = e.target.closest(".operations__tab");
+  if (!tab) return;
+  
+  const activeNum = tab.dataset.tab; // to know which tab is clicked
+  
+  // Remove active classes
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach(t => t.classList.remove('operations__content--active'));
+  
+  // Activate tab
+  tab.classList.add('operations__tab--active')
+  document
+      .querySelector(`.operations__content--${activeNum}`)
+      .classList.add('operations__content--active');
+  // tabsContent[activeNum-1].classList.add('operations__content--active')
+})
