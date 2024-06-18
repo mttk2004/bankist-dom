@@ -125,3 +125,20 @@ const handleHover = function(e) {
 nav.addEventListener('mouseover', handleHover.bind(.75));
 nav.addEventListener('mouseout', handleHover.bind(1))
 
+
+// Sticky navigation
+const navHeight = nav.getBoundingClientRect().height;
+const headerObsCallback = function(entries) {
+  const [entry] = entries;
+
+  console.log(entry);
+  if (entry.isIntersecting) nav.classList.remove('sticky')
+  else nav.classList.add('sticky')
+}
+const headerObserver = new IntersectionObserver(headerObsCallback, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`
+});
+
+headerObserver.observe(header)
