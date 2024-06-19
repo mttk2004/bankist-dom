@@ -53,8 +53,10 @@
       <option name="INTERPOLATION_NEW_LINE_BEFORE_END_DELIMITER" value="false" />
     </VueCodeStyleSettings>
     <codeStyleSettings language="HTML">
+      <option name="RIGHT_MARGIN" value="100" />
       <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
-      <option name="SOFT_MARGINS" value="80" />
+      <option name="WRAP_ON_TYPING" value="1" />
+      <option name="SOFT_MARGINS" value="100" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
@@ -75,6 +77,7 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="JavaScript">
+      <option name="RIGHT_MARGIN" value="100" />
       <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
       <option name="BLANK_LINES_AFTER_IMPORTS" value="2" />
       <option name="BRACE_STYLE" value="5" />
@@ -107,7 +110,8 @@
       <option name="PLACE_ASSIGNMENT_SIGN_ON_NEXT_LINE" value="true" />
       <option name="WRAP_COMMENTS" value="true" />
       <option name="FOR_BRACE_FORCE" value="1" />
-      <option name="SOFT_MARGINS" value="80" />
+      <option name="WRAP_ON_TYPING" value="1" />
+      <option name="SOFT_MARGINS" value="100" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />
